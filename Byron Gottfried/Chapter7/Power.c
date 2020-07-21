@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-double Power(double fNum, int iPow);
+extern double Power(double fNum, int iPow);
 
 int main()
 {
@@ -11,11 +11,11 @@ int main()
     printf("Enter the power\n");
     scanf("%d", &iPow);
     dAnswer = Power(dNum, iPow);
-    printf("Answer is = %g\n", dAnswer);
+    printf("Answer is = %lf\n", dAnswer);
     return 0;
 }
 
-double Power(double dNum, int iNum)
+extern double Power(double dNum, int iNum)
 {
     int i = 0;
     double dRet = 1.0;
