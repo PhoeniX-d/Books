@@ -5,7 +5,7 @@ int main()
 {
 	FILE *fp = NULL;
 	char c;
-	fp = fopen("sample.dat", "a");
+	fp = fopen("sample.dat", "r");
 	if(fp == NULL)
 	{
 		printf("Cannot open file!\n");
@@ -14,9 +14,8 @@ int main()
 	}
 	do
 	{
-		fputc(toupper(c = getchar()), fp);
-	}while(c != '\n');
-
+		putchar(tolower(c = getc(fp)));
+	}while(c != EOF);
 	fclose(fp);
 
 	return 0;
